@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Doors : MonoBehaviour
+public class ZR_to_BR : MonoBehaviour
 {
     public Transform Player;
     public GameObject BigRoom;
@@ -9,7 +9,7 @@ public class Doors : MonoBehaviour
     private bool readytotptobigroom = false;
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -24,6 +24,7 @@ public class Doors : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Player.transform.position = new Vector3(BigRoom.transform.position.x, BigRoom.transform.position.y, Player.transform.position.z);
+            readytotptobigroom = false;
         }
     }
 
@@ -38,5 +39,7 @@ public class Doors : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        interaction_statement.text = "";    }
+        interaction_statement.text = "";
+        readytotptobigroom = false;
+    }
 }
