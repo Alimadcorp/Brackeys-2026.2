@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -66,6 +67,11 @@ public class DialogueManager : MonoBehaviour
         currentMessageIndex = 0;
 
         DialogueEvents.ProgressDialogue(currentDialogue.id, currentMessageIndex);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) NextMessage();
     }
 
     public void NextMessage()

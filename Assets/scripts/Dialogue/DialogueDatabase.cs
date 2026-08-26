@@ -8,7 +8,7 @@ public enum Character
     Joe,
     Meowmad,
     Niggu
-    // add new characters below
+    // add new characters below - ali
 }
 
 public enum EndAction
