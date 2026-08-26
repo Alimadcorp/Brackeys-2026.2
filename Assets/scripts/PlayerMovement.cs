@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -19,17 +20,19 @@ public class PlayerMovement : MonoBehaviour
             playerRB.linearVelocity = new Vector2(-movespeed, playerRB.linearVelocity.y);
         if (Input.GetKey(KeyCode.D))
             playerRB.linearVelocity = new Vector2(movespeed, playerRB.linearVelocity.y);
-        if (playerRB.linearVelocity.y != 0)
-        {
-            isgrounded = false;
-        }  else { isgrounded = true; }
         if (Input.GetKeyDown(KeyCode.Space) && isgrounded)
         {
             playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, jumpspeed);
-            
-
+            isgrounded = false;
         }
 
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.transform.CompareTag("ground"))
+        {
+            isgrounded = true;
+        }
+    }
 }
