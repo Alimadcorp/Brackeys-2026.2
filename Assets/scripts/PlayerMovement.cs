@@ -22,8 +22,7 @@ public class PlayerMovement : MonoBehaviour
         if (playerRB.linearVelocity.y != 0)
         {
             isgrounded = false;
-        }
-        else { isgrounded = true; }
+        }  else { isgrounded = true; }
         if (Input.GetKeyDown(KeyCode.Space) && isgrounded)
         {
             playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, jumpspeed);
