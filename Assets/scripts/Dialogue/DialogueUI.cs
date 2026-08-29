@@ -6,58 +6,49 @@ using UnityEngine.UI;
 
 public class DialogueUI : MonoBehaviour
 {
-    [Header("Panels")]
     public GameObject dialoguePanel;
     public GameObject choicesPanel;
-    public TextMeshProUGUI prompt;
-
-    [Header("Text Fields")]
     public TMP_Text characterNameText;
     public TMP_Text messageText;
-
-    [Header("Buttons & Layout")]
     public Button nextButton;
     public Transform choiceButtonContainer;
     public Button choiceButtonPrefab;
-
-    [Header("Typewriter Settings")]
     [SerializeField] private float typingSpeed = 0.03f;
 
     private List<Button> activeChoiceButtons = new List<Button>();
     public static DialogueUI instance;
-
     private Coroutine typingCoroutine;
     private bool isTyping = false;
-    private string currentFullMessage = "";
+
+    private void Awake() => instance = this;
 
     private void OnEnable()
     {
         DialogueEvents.onDialogueProgress += OnDialogueProgress;
         DialogueEvents.onDialogueEnd += OnDialogueEnd;
-
-        if (nextButton != null)
-        {
-            nextButton.onClick.AddListener(OnNextButtonClicked);
-        }
+        if (nextButton) nextButton.onClick.AddListener(OnNextButtonClicked);
     }
 
     private void OnDisable()
     {
         DialogueEvents.onDialogueProgress -= OnDialogueProgress;
         DialogueEvents.onDialogueEnd -= OnDialogueEnd;
-
-        if (nextButton != null)
-        {
-            nextButton.onClick.RemoveListener(OnNextButtonClicked);
-        }
+        if (nextButton) nextButton.onClick.RemoveListener(OnNextButtonClicked);
     }
-
-    private void Awake() { instance = this; }
 
     private void Start()
     {
-        if (dialoguePanel != null) dialoguePanel.SetActive(false);
-        if (choicesPanel != null) choicesPanel.SetActive(false);
+        if (dialoguePanel) dialoguePanel.SetActive(false);
+        if (choicesPanel) choicesPanel.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (dialoguePanel && dialoguePanel.activeSelf && (!choicesPanel || !choicesPanel.activeSelf))
+        {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+                OnNextButtonClicked();
+        }
     }
 
     private void OnDialogueProgress(int dialogueId, int messageIndex)
@@ -70,18 +61,15 @@ public class DialogueUI : MonoBehaviour
         ClearChoices();
 
         if (messageIndex < current.characters.Count)
-        {
             characterNameText.text = current.characters[messageIndex].ToString().Replace("_", " ");
-        }
 
         if (messageIndex < current.messages.Count)
         {
-            currentFullMessage = current.messages[messageIndex];
             if (typingCoroutine != null) StopCoroutine(typingCoroutine);
-            typingCoroutine = StartCoroutine(TypeText(currentFullMessage));
+            typingCoroutine = StartCoroutine(TypeText(current.messages[messageIndex]));
         }
 
-        if (nextButton != null) nextButton.gameObject.SetActive(true);
+        if (nextButton) nextButton.gameObject.SetActive(true);
     }
 
     private IEnumerator TypeText(string targetText)
@@ -98,42 +86,23 @@ public class DialogueUI : MonoBehaviour
         isTyping = false;
     }
 
-    private void CompleteTextImmediately()
+    public void OnNextButtonClicked()
     {
-        if (typingCoroutine != null) StopCoroutine(typingCoroutine);
-        messageText.text = currentFullMessage;
-        isTyping = false;
-    }
+        if (isTyping) return;
 
-    private void OnNextButtonClicked()
-    {
         Dialogue current = DialogueManager.Instance.GetCurrentDialogue();
         if (current == null) return;
 
-        // Undertale Mechanics:
-        // 1. If currently typing -> Rush text completion
-        if (isTyping)
-        {
-            CompleteTextImmediately();
-            return;
-        }
-
-        // 2. If finished typing -> Proceed normally
         int currentIndex = DialogueManager.Instance.GetCurrentMessageIndex();
-
         if (currentIndex >= current.messages.Count - 1 && current.messages.Count > 0)
-        {
             RenderReplies(current);
-        }
         else
-        {
             DialogueManager.Instance.NextMessage();
-        }
     }
 
     private void RenderReplies(Dialogue dialogue)
     {
-        if (nextButton != null) nextButton.gameObject.SetActive(false);
+        if (nextButton) nextButton.gameObject.SetActive(false);
         choicesPanel.SetActive(true);
         ClearChoices();
 
@@ -141,15 +110,10 @@ public class DialogueUI : MonoBehaviour
         {
             int index = i;
             Button btn = Instantiate(choiceButtonPrefab, choiceButtonContainer);
-
             TMP_Text btnText = btn.GetComponentInChildren<TMP_Text>();
-            if (btnText != null) btnText.text = dialogue.replies[i];
+            if (btnText) btnText.text = dialogue.replies[i];
 
-            btn.onClick.AddListener(() =>
-            {
-                DialogueManager.Instance.SelectReply(index);
-            });
-
+            btn.onClick.AddListener(() => DialogueManager.Instance.SelectReply(index));
             activeChoiceButtons.Add(btn);
         }
     }
@@ -157,9 +121,7 @@ public class DialogueUI : MonoBehaviour
     private void ClearChoices()
     {
         foreach (Button btn in activeChoiceButtons)
-        {
-            if (btn != null) Destroy(btn.gameObject);
-        }
+            if (btn) Destroy(btn.gameObject);
         activeChoiceButtons.Clear();
     }
 
@@ -169,7 +131,6 @@ public class DialogueUI : MonoBehaviour
         {
             if (typingCoroutine != null) StopCoroutine(typingCoroutine);
             isTyping = false;
-
             dialoguePanel.SetActive(false);
             choicesPanel.SetActive(false);
             ClearChoices();
