@@ -82,7 +82,7 @@ public class DialogueUI : MonoBehaviour
         int currentIndex = DialogueManager.Instance.GetCurrentMessageIndex();
 
         // If on the final message and end action is a reply, render choice buttons
-        if (currentIndex >= current.messages.Count - 1 && current.endAction == EndAction.Reply)
+        if (currentIndex >= current.messages.Count - 1 && current.messages.Count > 0)
         {
             RenderReplies(current);
         }
