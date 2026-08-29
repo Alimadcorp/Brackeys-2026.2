@@ -45,7 +45,7 @@ public class DialogueUI : MonoBehaviour
 
     private void Update()
     {
-        if (dialoguePanel && dialoguePanel.activeSelf && (!choicesPanel || !choicesPanel.activeSelf))
+        if (dialoguePanel && dialoguePanel.activeSelf && (!choicesPanel || !choicesPanel.activeSelf) && !isTyping)
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
                 OnNextButtonClicked();
