@@ -4,7 +4,7 @@ public class ZR_to_BR : MonoBehaviour
 {
     public Transform Player;
     public GameObject BigRoom;
-    public TMPro.TextMeshProUGUI interaction_statement;
+    public TMPro.TextMeshPro interaction_statement;
 
     private bool readytotptobigroom = false;
     void Start()
