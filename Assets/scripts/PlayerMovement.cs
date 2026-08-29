@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (DialogueManager.Instance.IsDialogueActive)
+        if (DialogueManager.Instance && DialogueManager.Instance.IsDialogueActive)
         {
             playerRB.linearVelocity = Vector2.zero;
             return;

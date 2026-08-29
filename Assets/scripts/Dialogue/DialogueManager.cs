@@ -23,6 +23,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         Instance = this;
+        IsDialogueActive = false;
 
         BuildDictionary();
     }
