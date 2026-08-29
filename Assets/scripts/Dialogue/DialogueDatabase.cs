@@ -7,6 +7,10 @@ public enum Character
     Zach,
     Ryan,
     Narrator,
+    Mother,
+    Poor_Soul,
+    Overseer_4,
+    Overseer_9,
     Random_Kid,
     // add new characters below - 0
 }
