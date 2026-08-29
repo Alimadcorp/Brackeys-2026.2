@@ -14,6 +14,7 @@ public class DialogueUI : MonoBehaviour
     public Transform choiceButtonContainer;
     public Button choiceButtonPrefab;
     [SerializeField] private float typingSpeed = 0.03f;
+    public TextMeshProUGUI prompt;
 
     private List<Button> activeChoiceButtons = new List<Button>();
     public static DialogueUI instance;
