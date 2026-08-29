@@ -8,13 +8,29 @@ public class PlayerMovement : MonoBehaviour
     public float movespeed = 5f;
     public float jumpspeed = 8f;
     public bool isgrounded = true;
+    public Sprite[] sprites;
+    private SpriteRenderer spriteRenderer;
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
+        if (playerRB.linearVelocityX > 0.01f)
+        {
+            spriteRenderer.sprite = sprites[1];
+            spriteRenderer.flipX = false;
+        } else if (playerRB.linearVelocityX < -0.01f)
+        {
+            spriteRenderer.sprite = sprites[1];
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.sprite = sprites[0];
+        }
         if (DialogueManager.Instance && DialogueManager.Instance.IsDialogueActive)
         {
             playerRB.linearVelocity = Vector2.zero;
