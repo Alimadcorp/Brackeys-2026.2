@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -19,8 +20,15 @@ public class DialogueUI : MonoBehaviour
     public Transform choiceButtonContainer;
     public Button choiceButtonPrefab;
 
+    [Header("Typewriter Settings")]
+    [SerializeField] private float typingSpeed = 0.03f;
+
     private List<Button> activeChoiceButtons = new List<Button>();
     public static DialogueUI instance;
+
+    private Coroutine typingCoroutine;
+    private bool isTyping = false;
+    private string currentFullMessage = "";
 
     private void OnEnable()
     {
@@ -43,7 +51,7 @@ public class DialogueUI : MonoBehaviour
             nextButton.onClick.RemoveListener(OnNextButtonClicked);
         }
     }
-    
+
     private void Awake() { instance = this; }
 
     private void Start()
@@ -68,10 +76,33 @@ public class DialogueUI : MonoBehaviour
 
         if (messageIndex < current.messages.Count)
         {
-            messageText.text = current.messages[messageIndex];
+            currentFullMessage = current.messages[messageIndex];
+            if (typingCoroutine != null) StopCoroutine(typingCoroutine);
+            typingCoroutine = StartCoroutine(TypeText(currentFullMessage));
         }
 
         if (nextButton != null) nextButton.gameObject.SetActive(true);
+    }
+
+    private IEnumerator TypeText(string targetText)
+    {
+        isTyping = true;
+        messageText.text = "";
+
+        foreach (char letter in targetText.ToCharArray())
+        {
+            messageText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        isTyping = false;
+    }
+
+    private void CompleteTextImmediately()
+    {
+        if (typingCoroutine != null) StopCoroutine(typingCoroutine);
+        messageText.text = currentFullMessage;
+        isTyping = false;
     }
 
     private void OnNextButtonClicked()
@@ -79,9 +110,17 @@ public class DialogueUI : MonoBehaviour
         Dialogue current = DialogueManager.Instance.GetCurrentDialogue();
         if (current == null) return;
 
+        // Undertale Mechanics:
+        // 1. If currently typing -> Rush text completion
+        if (isTyping)
+        {
+            CompleteTextImmediately();
+            return;
+        }
+
+        // 2. If finished typing -> Proceed normally
         int currentIndex = DialogueManager.Instance.GetCurrentMessageIndex();
 
-        // If on the final message and end action is a reply, render choice buttons
         if (currentIndex >= current.messages.Count - 1 && current.messages.Count > 0)
         {
             RenderReplies(current);
@@ -128,6 +167,9 @@ public class DialogueUI : MonoBehaviour
     {
         if (!DialogueManager.Instance.IsDialogueActive)
         {
+            if (typingCoroutine != null) StopCoroutine(typingCoroutine);
+            isTyping = false;
+
             dialoguePanel.SetActive(false);
             choicesPanel.SetActive(false);
             ClearChoices();
