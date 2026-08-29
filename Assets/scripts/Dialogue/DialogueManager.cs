@@ -92,27 +92,13 @@ public class DialogueManager : MonoBehaviour
 
     private void HandleEndAction()
     {
-        switch (currentDialogue.endAction)
-        {
-            case EndAction.End:
-                FinishDialogue(-1);
-                break;
-
-            case EndAction.Action:
-                // Run inspector-assigned UnityEvent callbacks
-                currentDialogue.onDialogueAction?.Invoke();
-                FinishDialogue(-1);
-                break;
-
-            case EndAction.Reply:
-                // Let UI script display reply buttons; do not auto-close
-                break;
-        }
+        currentDialogue.onDialogueAction?.Invoke();
+        if(currentDialogue.replies.Length == 0) FinishDialogue(-1);
     }
 
     public void SelectReply(int replyIndex)
     {
-        if (currentDialogue == null || currentDialogue.endAction != EndAction.Reply) return;
+        if (currentDialogue == null) return;
 
         int nextId = -1;
         if (replyIndex >= 0 && replyIndex < currentDialogue.nextDialogueIds.Length)

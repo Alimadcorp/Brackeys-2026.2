@@ -11,13 +11,6 @@ public enum Character
     // add new characters below - ali
 }
 
-public enum EndAction
-{ 
-    End, 
-    Reply, 
-    Action 
-}
-
 [System.Serializable]
 public class Dialogue
 {
@@ -25,14 +18,11 @@ public class Dialogue
     public List<string> messages = new List<string>();
     public List<Character> characters = new List<Character>();
     
-    [Space(10)]
-    public EndAction endAction;
-    
-    [Header("Options (if endAction is Reply)")]
+    [Header("Replies")]
     public string[] replies; 
     public int[] nextDialogueIds;
 
-    [Header("Event to trigger (if endAction is Action)")]
+    [Header("On-end-triggers")]
     public UnityEvent onDialogueAction; 
 }
 
