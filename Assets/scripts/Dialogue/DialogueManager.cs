@@ -1,17 +1,17 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
+    private int _replyIndex;
 
     [Header("Database Reference")]
     public DialogueDatabase database;
 
-    private Dictionary<int, Dialogue> dialogueMap = new Dictionary<int, Dialogue>();
+    private readonly Dictionary<int, Dialogue> dialogueMap = new Dictionary<int, Dialogue>();
     private Dialogue currentDialogue;
-    private int currentMessageIndex = 0;
+    private int currentMessageIndex;
 
     public bool IsDialogueActive { get; private set; }
 
@@ -57,6 +57,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(int id)
     {
+        _replyIndex = 0;
         if (!dialogueMap.TryGetValue(id, out currentDialogue))
         {
             Debug.LogError($"[DialogueManager] Dialogue with ID {id} not found!");
@@ -92,8 +93,11 @@ public class DialogueManager : MonoBehaviour
 
     private void HandleEndAction()
     {
-        currentDialogue.onDialogueAction?.Invoke();
-        if(currentDialogue.replies.Length == 0) FinishDialogue(-1);
+        if (currentDialogue.onDialogueAction.Count > 0)
+        {
+            currentDialogue.onDialogueAction[_replyIndex]?.Invoke();
+        }
+        if(currentDialogue.replies.Length == 0) FinishDialogue();
     }
 
     public void SelectReply(int replyIndex)
@@ -101,6 +105,7 @@ public class DialogueManager : MonoBehaviour
         if (currentDialogue == null) return;
 
         int nextId = -1;
+        _replyIndex = replyIndex;
         if (replyIndex >= 0 && replyIndex < currentDialogue.nextDialogueIds.Length)
         {
             nextId = currentDialogue.nextDialogueIds[replyIndex];

@@ -63,7 +63,7 @@ public class DialogueUI : MonoBehaviour
 
         if (messageIndex < current.characters.Count)
         {
-            characterNameText.text = current.characters[messageIndex].ToString();
+            characterNameText.text = current.characters[messageIndex].ToString().Replace("_", " ");
         }
 
         if (messageIndex < current.messages.Count)

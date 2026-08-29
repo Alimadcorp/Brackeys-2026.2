@@ -4,11 +4,11 @@ using UnityEngine.Events;
 
 public enum Character 
 {
-    Player,
-    Joe,
-    Meowmad,
-    Niggu
-    // add new characters below - ali
+    Zach,
+    Ryan,
+    Narrator,
+    Random_Kid,
+    // add new characters below - 0
 }
 
 [System.Serializable]
@@ -23,7 +23,7 @@ public class Dialogue
     public int[] nextDialogueIds;
 
     [Header("On-end-triggers")]
-    public UnityEvent onDialogueAction; 
+    public List<UnityEvent> onDialogueAction; 
 }
 
 [System.Serializable]

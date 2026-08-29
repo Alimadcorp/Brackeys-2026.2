@@ -15,7 +15,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-               
+        if (DialogueManager.Instance.IsDialogueActive)
+        {
+            playerRB.linearVelocity = Vector2.zero;
+            return;
+        }
         if (Input.GetKey(KeyCode.A))
             playerRB.linearVelocity = new Vector2(-movespeed, playerRB.linearVelocity.y);
         if (Input.GetKey(KeyCode.D))

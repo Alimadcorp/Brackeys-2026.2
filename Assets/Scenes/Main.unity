@@ -1096,6 +1096,60 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &525340416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525340413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227093fbeb7847b7bce48baf830277ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  database:
+    dialogues:
+    - id: 0
+      messages:
+      - Zack wakes up in his room
+      - hi
+      - rehehe
+      characters: 000000000100000003000000
+      replies:
+      - who are you?
+      - bye
+      nextDialogueIds: 01000000ffffffff
+      onDialogueAction: []
+    - id: 1
+      messages:
+      - you idiot, i'm Joe
+      - ah ok
+      - hey,
+      - yea?
+      - i need a key, u seen it anywhere?
+      - umm i havent, but i'll let you know if i find it
+      - mkk
+      characters: 01000000000000000100000000000000010000000000000001000000
+      replies: []
+      nextDialogueIds: 
+      onDialogueAction: []
+    - id: 2
+      messages:
+      - you found a key
+      characters: 00000000
+      replies: []
+      nextDialogueIds: 
+      onDialogueAction: []
+    - id: 3
+      messages:
+      - hey, i found a key, is this what you where looking for?
+      - YESSS THANK U
+      - no problemo
+      characters: 000000000100000000000000
+      replies: []
+      nextDialogueIds: 
+      onDialogueAction: []
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,7 +1227,7 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: -2
-      type: {class: , ns: , asm: }
+      type: {class: '', ns: '', asm: ''}
     - rid: 3225985263497117706
       type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data:
@@ -1183,7 +1237,8 @@ MonoBehaviour:
         m_Provider2DCache:
           rid: 3225985290625876041
     - rid: 3225985290625876041
-      type: {class: 'Provider2DCache`1[[UnityEngine.Rendering.Universal.Light2DProvider, Unity.RenderPipelines.Universal.2D.Runtime]]', ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      type: {class: 'Provider2DCache`1[[UnityEngine.Rendering.Universal.Light2DProvider,
+          Unity.RenderPipelines.Universal.2D.Runtime]]', ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data:
         m_Cache: []
 --- !u!4 &619394802
