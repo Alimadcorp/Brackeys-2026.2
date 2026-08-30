@@ -2023,9 +2023,9 @@ MonoBehaviour:
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
 --- !u!1 &805590298
 GameObject:
@@ -190571,7 +190571,7 @@ MonoBehaviour:
   nextButton: {fileID: 674107391}
   choiceButtonContainer: {fileID: 721046305}
   choiceButtonPrefab: {fileID: 7271578099284322931, guid: 918ef85cdb2225c1c91ff3579ba3072d, type: 3}
-  typingSpeed: 0.05
+  typingSpeed: 0.03
   prompt: {fileID: 1181204626}
   alert: {fileID: 1314554438}
   alertText: {fileID: 1736128224}
