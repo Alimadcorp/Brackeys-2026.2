@@ -128,10 +128,22 @@ public class DialogueUI : MonoBehaviour
         if (current == null) return;
 
         int currentIndex = DialogueManager.Instance.GetCurrentMessageIndex();
+
         if (currentIndex >= current.messages.Count - 1 && current.messages.Count > 0)
-            RenderReplies(current);
+        {
+            if (current.replies != null && current.replies.Length > 0)
+            {
+                RenderReplies(current);
+            }
+            else
+            {
+                DialogueManager.Instance.NextMessage();
+            }
+        }
         else
+        {
             DialogueManager.Instance.NextMessage();
+        }
     }
 
     private void RenderReplies(Dialogue dialogue)
