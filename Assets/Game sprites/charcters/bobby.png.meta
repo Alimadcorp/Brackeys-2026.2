@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -84,7 +84,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -115,12 +115,12 @@ TextureImporter:
       name: bobby_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 41
-        width: 34
-        height: 18
+        x: 28
+        y: 42
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,12 +137,12 @@ TextureImporter:
       name: bobby_1
       rect:
         serializedVersion: 2
-        x: 60
-        y: 41
+        x: 44
+        y: 42
         width: 16
-        height: 18
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: bobby_2
       rect:
         serializedVersion: 2
-        x: 92
-        y: 41
-        width: 32
-        height: 18
+        x: 60
+        y: 42
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: bobby_3
       rect:
         serializedVersion: 2
-        x: 124
-        y: 41
-        width: 32
-        height: 18
+        x: 92
+        y: 42
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: bobby_4
       rect:
         serializedVersion: 2
-        x: 156
-        y: 40
+        x: 108
+        y: 42
         width: 16
-        height: 18
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -221,11 +221,77 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: bobby_5
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 42
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2128d7a83f6a3b88582ac490a47ed5bc
+      internalID: 209580298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobby_6
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 42
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121865da64e27c8b19fe7f4d2b524b0f
+      internalID: 1238934228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobby_7
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 41
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0de2f9ea6b56c86488b42307a49ce25
+      internalID: -64139243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b0d5277995cdb5fbab50552152ae0781
     internalID: 0
     vertices: []
     indices: 
@@ -233,13 +299,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":15.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":12.0,"y":10.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       bobby_0: -3704525651330402105
       bobby_1: 2345403399501034084
       bobby_2: -9166973129582535114
       bobby_3: 7183417010501333552
       bobby_4: -3296177409808621783
+      bobby_5: 209580298
+      bobby_6: 1238934228
+      bobby_7: -64139243
+      bobby_8: 1424934022
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

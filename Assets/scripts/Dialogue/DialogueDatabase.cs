@@ -12,6 +12,10 @@ public enum Character
     Overseer_4,
     Overseer_9,
     Random_Kid,
+    Lesli,
+    Bobby,
+    Amy,
+    Bluy,
     // add new characters below - 0
 }
 

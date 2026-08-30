@@ -55,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,7 +90,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -122,11 +122,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 20
-        y: 40
-        width: 32
-        height: 19
+        y: 41
+        width: 16
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -143,12 +143,12 @@ TextureImporter:
       name: zetour_1
       rect:
         serializedVersion: 2
-        x: 53
-        y: 40
+        x: 36
+        y: 41
         width: 16
-        height: 19
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -165,12 +165,12 @@ TextureImporter:
       name: zetour_2
       rect:
         serializedVersion: 2
-        x: 84
-        y: 40
-        width: 17
-        height: 19
+        x: 52
+        y: 41
+        width: 16
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -187,12 +187,12 @@ TextureImporter:
       name: zetour_3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 40
-        width: 32
-        height: 19
+        x: 84
+        y: 41
+        width: 16
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -209,12 +209,12 @@ TextureImporter:
       name: zetour_4
       rect:
         serializedVersion: 2
-        x: 131
-        y: 40
-        width: 17
-        height: 19
+        x: 100
+        y: 41
+        width: 16
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: zetour_5
       rect:
         serializedVersion: 2
-        x: 149
-        y: 40
+        x: 116
+        y: 41
         width: 16
-        height: 19
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -253,12 +253,12 @@ TextureImporter:
       name: zetour_6
       rect:
         serializedVersion: 2
-        x: 165
-        y: 40
+        x: 132
+        y: 41
         width: 16
-        height: 19
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -271,11 +271,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: zetour_7
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 41
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f08a2ea4903c5d889d164dcdf75113
+      internalID: 1279456704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zetour_8
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 41
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71415639866d12e5db9e654847d872e1
+      internalID: -1491934874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b703241830be52b05924690581200578
     internalID: 0
     vertices: []
     indices: 
@@ -283,7 +327,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":15.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":17.0},"gridSpriteOffset":{"x":4.0,"y":8.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       zetour_0: 8529539578437474853
       zetour_1: 7541237415083643046
@@ -292,6 +338,8 @@ TextureImporter:
       zetour_4: -7666174495715450377
       zetour_5: -8865086936138318572
       zetour_6: -253144929447834542
+      zetour_7: 1279456704
+      zetour_8: -1491934874
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
