@@ -38,6 +38,15 @@ public class DialogueUI : MonoBehaviour
             yield return null;
         }
     }
+    
+    public void AlertBad(string text) => Alert(text, Color.red);
+    public void AlertGoo(string text) => Alert(text, Color.yellow);
+    public void AlertGood(string text) => Alert(text, Color.green);
+
+    private void Alert (string _text, Color _color)
+    {
+        StartCoroutine(onAlert(_text, _color));
+    }
 
     private void Awake() => instance = this;
 
