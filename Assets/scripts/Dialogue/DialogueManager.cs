@@ -71,11 +71,6 @@ public class DialogueManager : MonoBehaviour
         DialogueEvents.ProgressDialogue(currentDialogue.id, currentMessageIndex);
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) NextMessage();
-    }
-
     public void NextMessage()
     {
         if (!IsDialogueActive || currentDialogue == null) return;

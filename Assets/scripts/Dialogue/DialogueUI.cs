@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueUI : MonoBehaviour
@@ -16,10 +17,27 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private float typingSpeed = 0.03f;
     public TextMeshProUGUI prompt;
 
-    private List<Button> activeChoiceButtons = new List<Button>();
+    private readonly List<Button> activeChoiceButtons = new List<Button>();
     public static DialogueUI instance;
     private Coroutine typingCoroutine;
-    private bool isTyping = false;
+    private bool isTyping;
+
+    public CanvasGroup alert;
+    public TextMeshProUGUI alertText;
+
+    private IEnumerator onAlert(string text, Color color)
+    {
+        Time.timeScale = 0;
+        alert.gameObject.SetActive(true);
+        float t = 0;
+        alertText.color = color;
+        while (t < 1)
+        {
+            t += Time.unscaledDeltaTime * 0.5f;
+            alert.alpha = t;
+            yield return null;
+        }
+    }
 
     private void Awake() => instance = this;
 
@@ -37,6 +55,12 @@ public class DialogueUI : MonoBehaviour
         if (nextButton) nextButton.onClick.RemoveListener(OnNextButtonClicked);
     }
 
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+    }
+
     private void Start()
     {
         if (dialoguePanel) dialoguePanel.SetActive(false);
@@ -45,7 +69,7 @@ public class DialogueUI : MonoBehaviour
 
     private void Update()
     {
-        if (dialoguePanel && dialoguePanel.activeSelf && (!choicesPanel || !choicesPanel.activeSelf) && !isTyping)
+        if (dialoguePanel && dialoguePanel.activeSelf && (!choicesPanel || !choicesPanel.activeSelf))
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
                 OnNextButtonClicked();
@@ -78,7 +102,7 @@ public class DialogueUI : MonoBehaviour
         isTyping = true;
         messageText.text = "";
 
-        foreach (char letter in targetText.ToCharArray())
+        foreach (char letter in targetText)
         {
             messageText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
@@ -87,7 +111,7 @@ public class DialogueUI : MonoBehaviour
         isTyping = false;
     }
 
-    public void OnNextButtonClicked()
+    private void OnNextButtonClicked()
     {
         if (isTyping) return;
 
