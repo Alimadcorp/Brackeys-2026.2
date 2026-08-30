@@ -28,6 +28,7 @@ public class DialogueUI : MonoBehaviour
     private IEnumerator onAlert(string text, Color color)
     {
         Time.timeScale = 0;
+        alertText.text = text;
         alert.gameObject.SetActive(true);
         float t = 0;
         alertText.color = color;
