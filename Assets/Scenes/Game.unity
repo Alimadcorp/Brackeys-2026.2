@@ -1190,193 +1190,11 @@ MonoBehaviour:
     dialogues:
     - id: 0
       messages:
-      - The child wakes up in his dorm
-      - he feels dizzy
-      - ..
-      - you feel dizzy
-      - you remember somehow that you should get to work
-      - you should...
-      - get to....
-      - work.....
-      - why work?-
-      - dont know but its necessary
-      - u have a gut feeling that not working will have bad consequences
-      - might be that...
-      - she may get mad
-      characters: 02000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000
+      - Get to work.
+      characters: 00000000
       replies: []
       nextDialogueIds: 
-      onDialogueAction:
-      - m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 112840991}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 1
-            m_CallState: 2
-    - id: 1
-      messages:
-      - Hi
-      - I'm Amy
-      - Who are you?
-      characters: 07000000070000000a000000
-      replies:
-      - I dont know either
-      - But who is Amy?
-      - Why am I here
-      nextDialogueIds: 020000000300000004000000
-      onDialogueAction:
-      - m_PersistentCalls:
-          m_Calls: []
-      - m_PersistentCalls:
-          m_Calls: []
-      - m_PersistentCalls:
-          m_Calls: []
-    - id: 2
-      messages:
-      - Oh
-      - Cool...
-      characters: 0a0000000a000000
-      replies: []
-      nextDialogueIds: 
-      onDialogueAction:
-      - m_PersistentCalls:
-          m_Calls: []
-    - id: 3
-      messages:
-      - -_-
-      - I am
-      - Get to work bro
-      characters: 0a0000000a0000000a000000
-      replies: []
-      nextDialogueIds: 
-      onDialogueAction:
-      - m_PersistentCalls:
-          m_Calls: []
-    - id: 4
-      messages:
-      - Oh wow
-      - I dont particularly remember either
-      - But we are here just to chill under mother's care
-      - Yknow
-      characters: 0a0000000a0000000a0000000a000000
-      replies:
-      - Ok
-      - Who is mother?
-      nextDialogueIds: ffffffff05000000
-      onDialogueAction:
-      - m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 1583021700}
-            m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
-            m_MethodName: SetNext
-            m_Mode: 3
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 1
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-      - m_PersistentCalls:
-          m_Calls: []
-    - id: 5
-      messages:
-      - You dont know of mother????
-      - The care taker of alllllllllllllll
-      - ':hellmo:'
-      - She might be in her room rn
-      - She very nice
-      - But remember, whatever you ask her of,
-      - ...
-      - Don't ask her of why we are here
-      - Last time someone did that she got quite mad
-      - Never saw that guy again
-      characters: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
-      replies:
-      - kk great
-      - How can I get to her r-room?
-      nextDialogueIds: ffffffff06000000
-      onDialogueAction:
-      - m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 1583021700}
-            m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
-            m_MethodName: SetNext
-            m_Mode: 3
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 2
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-      - m_PersistentCalls:
-          m_Calls: []
-    - id: 6
-      messages:
-      - Take that door to the left
-      characters: 0a000000
-      replies: []
-      nextDialogueIds: 
-      onDialogueAction:
-      - m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 1950706600}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 3
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 1
-            m_CallState: 2
-    - id: 7
-      messages:
-      - What do you want?
-      characters: 0a000000
-      replies:
-      - Nothing lol
-      - Amy ur kinda nice UwU
-      nextDialogueIds: ffffffff08000000
-      onDialogueAction:
-      - m_PersistentCalls:
-          m_Calls: []
-    - id: 8
-      messages:
-      - Thanks
-      - Expression detected
-      - Murder both victims
-      characters: 0a0000000500000005000000
-      replies: []
-      nextDialogueIds: 
-      onDialogueAction:
-      - m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 1992067565}
-            m_TargetAssemblyTypeName: DialogueUI, Assembly-CSharp
-            m_MethodName: AlertBad
-            m_Mode: 5
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 3
-              m_FloatArgument: 0
-              m_StringArgument: U dead
-              m_BoolArgument: 0
-            m_CallState: 2
+      onDialogueAction: []
 --- !u!1 &560461515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,10 +1776,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1275122496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076294, y: 42}
-  m_SizeDelta: {x: 331.92, y: 195.88}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.000030517578, y: 51.179993}
+  m_SizeDelta: {x: -148.07999, y: -159.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &721046306
 MonoBehaviour:
@@ -189348,8 +189166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633a59b1e8b244bc8465f28ab295be0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
-  dialogueIds: 010000000400000007000000
-  triggerOnces: 000000
+  dialogueIds: 
+  triggerOnces: 
   nextIndex: 0
 --- !u!61 &1583021701
 BoxCollider2D:
@@ -190610,11 +190428,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScaleFactor: 1.41
+  m_ReferenceResolution: {x: 480, y: 360}
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -190885,7 +190703,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   startOnStart: 1
-  delay: 1
+  delay: 0.2
 --- !u!4 &2050465493 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4028798248760473324, guid: 12afa92d56abcf2449cb234d20a235bb, type: 3}

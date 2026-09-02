@@ -16,6 +16,7 @@ public enum Character
     Bobby,
     Amy,
     Bluy,
+    Good_Morning,
     // add new characters below - 0
 }
 
