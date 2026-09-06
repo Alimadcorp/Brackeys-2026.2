@@ -42,6 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Menu
+    uniqueID: 1595639487
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []
