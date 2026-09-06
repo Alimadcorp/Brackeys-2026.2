@@ -8,4 +8,4 @@ You're a worker at a factory, business as usual, but something feels off... The 
 
 Playable url: https://alimad.itch.io/brackeys26
 
-For editing, install [Godot 4.3](https://godotengine.org/download/archive/4.3-stable/) or above, then clone this git repo and open the folder in Godot.
+For editing, install Unity, then clone this git repo and open the folder in it.
